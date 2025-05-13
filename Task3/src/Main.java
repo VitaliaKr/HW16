@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
+    private static final String VALID_REGEX = "[А-яё-]+\\s[А-яё-]+\\s[А-яё-]+";
     public static void main(String[] args) {
         String inputData = inputString();
         if (isValidString(inputData)) {
@@ -18,7 +19,7 @@ public class Main {
     }
 
     public static boolean isValidString(String validateString) {
-        boolean isValid = validateString.matches("[А-яё-]+\\s[А-яё-]+\\s[А-яё-]+");
+        boolean isValid = validateString.matches(VALID_REGEX);
         return isValid;
     }
 
