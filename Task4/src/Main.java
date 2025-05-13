@@ -1,6 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
+    private static final String VALID_REGEX = "(\\d)(\\d{3})(\\d{3})(\\d{2})(\\d{2})";
     public static void main(String[] args) {
         String phoneNumber = cleanPhoneNumber(inputPhoneNumber());
         isValidPhoneNumber(phoneNumber);
@@ -29,6 +30,6 @@ public class Main {
     }
 
     public static void newPhoneNumberFormat(String inputPhoneNumber){
-        System.out.println(inputPhoneNumber.replaceAll("(\\d)(\\d{3})(\\d{3})(\\d{2})(\\d{2})","+$1 ($2) $3 $4-$5"));
+        System.out.println(inputPhoneNumber.replaceAll(VALID_REGEX,"+$1 ($2) $3 $4-$5"));
     }
 }
